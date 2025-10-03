@@ -22,7 +22,6 @@ const Card = ({ recipe }: CardProps) => {
                     </li>
                 ))}
             </ul>
-            <p></p>
         </div>
     );
 };

@@ -1,9 +1,11 @@
-export type FetchRecipesDataType = {
+export type RecepiesQueryType = {
     recipes: RecipeType[];
     total: number;
     skip: number;
     limit: number;
 };
+
+export type RecipeCreateType = RecipeType;
 
 export type RecipeType = {
     id: number;
