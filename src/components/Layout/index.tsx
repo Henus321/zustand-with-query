@@ -6,9 +6,9 @@ const Layout = () => {
         <div className="flex flex-col">
             <Header />
 
-            <h1>Layout</h1>
-
-            <Outlet />
+            <div className="flex flex-col p-4">
+                <Outlet />
+            </div>
         </div>
     );
 };

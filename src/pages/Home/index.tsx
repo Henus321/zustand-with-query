@@ -1,5 +1,21 @@
+import PageHead from "@/components/PageHead";
+import { ROUTES } from "@/config";
+
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <div>
+            <PageHead title={ROUTES.home.label} />
+
+            <h4 className="text-xl">Тест стека</h4>
+            <ul className="list-disc list-inside">
+                <li>React</li>
+                <li>Zustand</li>
+                <li>TanStack Query</li>
+                <li>Vite</li>
+                <li>TailwindCSS</li>
+            </ul>
+        </div>
+    );
 };
 
 export default Home;
