@@ -11,6 +11,7 @@ const Home = () => {
                 <li>React</li>
                 <li>Zustand</li>
                 <li>TanStack Query</li>
+                <li>React Hook Form + Zod</li>
                 <li>Vite</li>
                 <li>TailwindCSS</li>
             </ul>

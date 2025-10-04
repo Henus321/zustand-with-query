@@ -3,7 +3,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { RecipeCreateType, RecipeType } from "../types";
 import { queryKeys } from "./_query-keys";
 
-export const useCreateRecipeMutation = () => {
+export const useRecipeCreateMutation = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
