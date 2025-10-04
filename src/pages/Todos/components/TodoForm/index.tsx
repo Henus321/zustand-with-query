@@ -34,6 +34,8 @@ const TodoForm = () => {
         resolver: zodResolver(schema),
     });
 
+    console.log("render test");
+
     const onSubmit: SubmitHandler<FormFields> = async (data) => {
         try {
             await new Promise((resolve) => setTimeout(resolve, 1000));

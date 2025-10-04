@@ -6,6 +6,7 @@ type CardProps = {
 
 const Card = ({ recipe }: CardProps) => {
     const { name, image, ingredients } = recipe;
+
     return (
         <div className="flex flex-col bg-sky-50 rounded-sm p-3 shadow">
             <img
