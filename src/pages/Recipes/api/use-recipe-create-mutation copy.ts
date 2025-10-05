@@ -7,8 +7,8 @@ export const useRecipeCreateMutation = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: async (body: Partial<RecipeType>) => {
-            const data = await client.post<RecipeCreateType>("recipes", {
+        mutationFn: async (body: RecipeType) => {
+            const data = await client.post<RecipeCreateType>("/recipes", {
                 body: body,
             });
 

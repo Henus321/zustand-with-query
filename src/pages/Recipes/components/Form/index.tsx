@@ -23,7 +23,7 @@ const schema = z.object({
 
 type FormFields = z.infer<typeof schema>;
 
-const TodoForm = () => {
+const Form = () => {
     const {
         register,
         handleSubmit,
@@ -33,8 +33,6 @@ const TodoForm = () => {
         defaultValues: { email: "test@email.com" },
         resolver: zodResolver(schema),
     });
-
-    console.log("render test");
 
     const onSubmit: SubmitHandler<FormFields> = async (data) => {
         try {
@@ -50,10 +48,13 @@ const TodoForm = () => {
     };
 
     return (
-        <form className="flex flex-col gap-2" onSubmit={handleSubmit(onSubmit)}>
+        <form
+            className="flex flex-col gap-2 mb-3 bg-sky-100 rounded-md p-3 shadow"
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <div className="flex flex-col">
                 <input
-                    className="p-1 border-2 border-solid border-sky-800 rounded-sm"
+                    className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("email")}
                     type="text"
                     placeholder="Email"
@@ -65,7 +66,7 @@ const TodoForm = () => {
 
             <div className="flex flex-col">
                 <input
-                    className="p-1 border-2 border-solid border-sky-800 rounded-sm"
+                    className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("password")}
                     type="password"
                     placeholder="Password"
@@ -79,7 +80,7 @@ const TodoForm = () => {
 
             <div className="flex flex-col">
                 <input
-                    className="p-1 border-2 border-solid border-sky-800 rounded-sm"
+                    className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("phone")}
                     placeholder="Phone"
                 />
@@ -102,4 +103,4 @@ const TodoForm = () => {
     );
 };
 
-export default TodoForm;
+export default Form;

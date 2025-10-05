@@ -6,7 +6,7 @@ import { queryKeys } from "./_query-keys";
 const useRecipesQuery = () => {
     return useQuery({
         queryFn: async () => {
-            const data = await client.get<RecepiesQueryType>("recipes");
+            const data = await client.get<RecepiesQueryType>("/recipes");
 
             return data?.data?.recipes;
         },

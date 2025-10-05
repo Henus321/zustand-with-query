@@ -1,3 +1,3 @@
 export const queryKeys = {
-    useRecipesQuery: "recipes",
+    useRecipesQuery: "recipes-query",
 };
