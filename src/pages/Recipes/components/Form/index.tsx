@@ -57,7 +57,7 @@ const Form = () => {
                     className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("email")}
                     type="text"
-                    placeholder="Email"
+                    placeholder="Почта"
                 />
                 {errors.email && (
                     <div className="text-red-500">{errors.email.message}</div>
@@ -69,7 +69,7 @@ const Form = () => {
                     className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("password")}
                     type="password"
-                    placeholder="Password"
+                    placeholder="Пароль"
                 />
                 {errors.password && (
                     <div className="text-red-500">
@@ -82,7 +82,7 @@ const Form = () => {
                 <input
                     className="p-1 border-2 border-solid border-sky-800 rounded-sm bg-white"
                     {...register("phone")}
-                    placeholder="Phone"
+                    placeholder="Телефон"
                 />
                 {errors.phone && (
                     <div className="text-red-500">{errors.phone.message}</div>
@@ -94,7 +94,7 @@ const Form = () => {
                 disabled={isSubmitting}
                 type="submit"
             >
-                {isSubmitting ? "Loading..." : "Submit"}
+                {isSubmitting ? "Загрузка..." : "Подтвердить"}
             </button>
             {errors.root && (
                 <div className="text-red-500">{errors.root.message}</div>
