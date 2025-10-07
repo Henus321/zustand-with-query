@@ -21,20 +21,20 @@ const schema = z.object({
         ),
 });
 
-type FormFields = z.infer<typeof schema>;
+type TestFormFields = z.infer<typeof schema>;
 
-const Form = () => {
+const TestForm = () => {
     const {
         register,
         handleSubmit,
         setError,
         formState: { errors, isSubmitting },
-    } = useForm<FormFields>({
-        defaultValues: { email: "test@email.com" },
+    } = useForm<TestFormFields>({
+        defaultValues: { email: "test@gmail.com" },
         resolver: zodResolver(schema),
     });
 
-    const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    const onSubmit: SubmitHandler<TestFormFields> = async (data) => {
         try {
             await new Promise((resolve) => setTimeout(resolve, 1000));
             console.log("data", data);
@@ -103,4 +103,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default TestForm;

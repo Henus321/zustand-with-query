@@ -1,14 +1,14 @@
 import { client } from "@/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import type { RecipeCreateType } from "../types";
+import type { PostType } from "../types";
 import { queryKeys } from "./_query-keys";
 
-export const useRecipeDeleteMutation = () => {
+export const usePostDeleteMutation = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
         mutationFn: async (id: number) => {
-            const data = await client.delete<RecipeCreateType>("/recipes", {
+            const data = await client.delete<PostType>("/posts", {
                 params: {
                     id,
                 },
@@ -18,7 +18,7 @@ export const useRecipeDeleteMutation = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: [queryKeys.useRecipesQuery],
+                queryKey: [queryKeys.usePostsQuery],
             });
         },
     });

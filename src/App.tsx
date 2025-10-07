@@ -1,5 +1,5 @@
 import Layout from "./components/Layout";
-import Recipes from "./pages/Recipes";
+import Posts from "./pages/Posts";
 import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";
@@ -10,7 +10,7 @@ function App() {
         <Routes>
             <Route path={ROUTES.home.href} element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path={ROUTES.recipes.href} element={<Recipes />} />
+                <Route path={ROUTES.posts.href} element={<Posts />} />
             </Route>
         </Routes>
     );

@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const client = axios.create({
-    baseURL: "https://dummyjson.com",
+    baseURL: "https://jsonplaceholder.typicode.com",
 });

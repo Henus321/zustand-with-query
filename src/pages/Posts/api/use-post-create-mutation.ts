@@ -1,14 +1,14 @@
 import { client } from "@/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import type { RecipeCreateType, RecipeType } from "../types";
+import type { PostType, NewPostType } from "../types";
 import { queryKeys } from "./_query-keys";
 
-export const useRecipeCreateMutation = () => {
+export const usePostCreateMutation = () => {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: async (body: RecipeType) => {
-            const data = await client.post<RecipeCreateType>("/recipes", {
+        mutationFn: async (body: NewPostType) => {
+            const data = await client.post<PostType>("/posts", {
                 body: body,
             });
 
@@ -16,7 +16,7 @@ export const useRecipeCreateMutation = () => {
         },
         onSuccess: () => {
             queryClient.invalidateQueries({
-                queryKey: [queryKeys.useRecipesQuery],
+                queryKey: [queryKeys.usePostsQuery],
             });
         },
     });
